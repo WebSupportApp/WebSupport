@@ -1,8 +1,6 @@
 # windows desktop files
 desktop.ini
 
-node_modules
-
 # Logs
 logs
 *.log
