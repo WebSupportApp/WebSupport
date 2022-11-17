@@ -1,0 +1,16 @@
+extends layout
+
+block main-content
+    form#request-form.form-control(action='/client/request' method='post')
+        legend Submit a Request
+        div.mb-3.w-25
+            label.form-label(for='email') Email ID
+            input.form-control(type="text" name="email")
+        div.mb-3.w-25
+            label.form-label(for="subject") Subject
+            input.form-control(type="text", name="subject")
+        div.mb-3.w-50
+            label.form-label(for="details") Detailed Explanation
+            textarea.form-control(rows="5", name="details")
+        div.mb-3.w-25
+            input.btn.btn-dark(type='submit' value='OK')

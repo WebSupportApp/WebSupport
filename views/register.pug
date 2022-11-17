@@ -1,0 +1,16 @@
+extends layout
+
+block main-content
+    form#request-form.form-control(action='/client/register' method='post')
+        legend Register For Client ID
+        div.mb-3.w-25
+            label.form-label(for='email') Email id
+            input.form-control(type="email" name="email" required)
+        div.mb-3.w-25
+            label.form-label(for="firstName") First Name
+            input.form-control(type="text" name="firstName" required)
+        div.mb-3.w-25
+            label.form-label(for="lastName") Last Name
+            input.form-control(type="text" name="lastName" required)
+        div.mb-3.w-25
+            input.btn.btn-dark(type="submit" value="Register")

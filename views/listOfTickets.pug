@@ -1,0 +1,16 @@
+extends layout
+
+block main-content
+    table.table.table-striped
+        tr
+            th Ticket ID
+            th Request Subject 
+            th Client Name
+            th Ticket Status
+        each ticket in tickets
+            tr 
+                td 
+                    a(href="/admin/ticket/" + ticket._id) #{ticket._id} 
+                td #{ticket.requestSubject}
+                td #{ticket.client.firstName} #{ticket.client.lastName}
+                td #{ticket.status}

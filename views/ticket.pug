@@ -1,0 +1,64 @@
+extends layout
+
+block main-content
+    div#clientDetails
+        table.table.table-light.table-striped
+            tr 
+                th(colspan="2") Client details
+            tr 
+                td.w-25 Client ID
+                td #{ticket.client._id}
+            tr 
+                td.w-25 Email
+                td #{ticket.client.email}
+            tr 
+                td.w-25 Name
+                td #{ticket.client.firstName}  #{ticket.client.lastName}   
+    div#ticketDetails
+        table.table.table-light.table-striped
+            tr 
+                th(colspan="2") Ticket details
+            tr 
+                td.w-25 Ticket ID
+                td #{ticket._id}
+            tr 
+                td.w-25 Subject
+                td #{ticket.requestSubject}
+            tr 
+                td.w-25 Details
+                td #{ticket.requestDetails}
+            tr 
+                td.w-25 Created On
+                td #{ticket.createdOn}
+            tr 
+                td.w-25 Current Status
+                td #{ticket.status}
+
+        table.table.table-light.table-striped
+            tr 
+                th(colspan="2") Notes
+            tr  
+                th.w-25 Created On
+                th Content
+            each note in ticket.notes
+                
+                tr 
+                    td.w-25 #{note.time}
+                    td #{note.noteContent}
+                    
+
+        form#noteForm.form-control(action="/admin/ticket/"+ticket._id method="post")
+            legend Edit Ticket
+            div.mb-3.w-25
+                label.form-label(for="status") Change Status:
+                select.form-select(name="status")
+                    option(value="New") New
+                    option(value="Acknowledged") Acknowledged
+                    option(value="Waiting for Client") Waiting for Client
+                    option(value="Resolved") Resolved
+            div.mb-3.w-50
+                label.form-label(for="newNoteContent") Add Note:
+                textarea.form-control(rows="5", name="newNoteContent")
+            div.mb-3.w-25
+                input.btn.btn-dark(type="submit", value="Save")
+

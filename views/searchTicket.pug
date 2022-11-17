@@ -1,0 +1,7 @@
+extends layout
+
+block main-content
+    form#usingTicketID(action="/admin/searchTicket" method="post")
+        label(for="ticketID") Search using ticket ID:
+        input(type="text" name="ticketID")
+        input(type="submit", value="Search")
