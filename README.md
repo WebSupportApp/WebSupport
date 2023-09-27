@@ -11,21 +11,21 @@ WebSupport is a ticketing system web application that allows clients to register
 ## Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/singhramneet/WebSupport.git
-   ```
+```bash
+git clone https://github.com/singhramneet/WebSupport.git
+```
 2. Navigate to the project directory:
-  ```bash
-  cd WebSupport
-  ```
+```bash
+cd WebSupport
+```
 
 3. Install the required packages:
-  ```bash
-  npm install
-  ```
+```bash
+npm install
+```
 4. Start the application:
-  ```bash
-  npm start
+```bash
+npm start
 ```
 
 ## Usage
