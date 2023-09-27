@@ -37,4 +37,5 @@ WebSupport is a ticketing system web application that allows clients to register
 -Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
-MIT
+### MIT
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
