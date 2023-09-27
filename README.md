@@ -34,7 +34,7 @@ WebSupport is a ticketing system web application that allows clients to register
 - Use the provided options to register as a client, create service requests, or download the FAQ.
 ## Contributing
 
--Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+- Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 ### MIT
