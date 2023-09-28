@@ -1,16 +1,23 @@
-extends layout
+extends layoutLoggedOut
 
 block main-content
-    form#request-form.form-control(action='/client/register' method='post')
+    form#request-form.form-control.mb-3(action='/client/register' method='post')
         legend Register For Client ID
-        div.mb-3.w-25
+        div.mb-3.col-lg-3.col-md-4.col-sm-6
             label.form-label(for='email') Email id
             input.form-control(type="email" name="email" required)
-        div.mb-3.w-25
+        div.mb-3.col-lg-3.col-md-4.col-sm-6
             label.form-label(for="firstName") First Name
             input.form-control(type="text" name="firstName" required)
-        div.mb-3.w-25
+        div.mb-3.col-lg-3.col-md-4.col-sm-6
             label.form-label(for="lastName") Last Name
             input.form-control(type="text" name="lastName" required)
-        div.mb-3.w-25
-            input.btn.btn-dark(type="submit" value="Register")
+        div.mb-3.col-lg-3.col-md-4.col-sm-6
+            label.form-label(for='password') Password
+            input.form-control(type="password" name="password" required)
+        div.mb-3.col-lg-3.col-md-4.col-sm-6
+            button.btn.btn-outline-dark.mb-3(type="submit") Register
+            br
+            span Already Registered?        
+            a.btn.btn-outline-dark(href="/client/login") Login
+

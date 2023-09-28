@@ -1,8 +1,9 @@
-extends layout
+extends layoutLoggedIn
 
 block main-content
     h5 Chose an option
     div#client-index.list-group
-        a.list-group-item(href="/client/register") Register for a client ID
+        a.list-group-item(href="/client/myrequests") View My requests
         a.list-group-item(href="/client/request") New Service Request
+        a.list-group-item(href="/client/chat") Chat with a specialist
         a.list-group-item(href="/public/faq.pdf") Download some frequently asked questions

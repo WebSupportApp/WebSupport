@@ -1,0 +1,51 @@
+extends layoutLoggedIn
+
+block main-content
+
+
+    div.container.card.w-50.bg-light(style="height: 400px;")
+        h3.my-3.mx-auto.card-title Chat Support
+        div#chat.overflow-auto.d-flex.flex-column
+        // flex-row-reverse
+
+    div.container.card.w-50.bg-light
+        form#myForm.text-center.form-control.input
+            input#Message.form-conrtol.w-75(type='text' placeholder='Message' autocomplete='off')
+            button.btn.container.btn-outline-dark.w-25(type='submit') Send
+
+    script.
+        const ws = new WebSocket('ws:/localhost:3000/accept-msg');
+        ws.onmessage = function (event) {
+
+            let dataString = event.data.replace(/['"]+/g, '');
+            let dataArray = dataString.split(" ");
+            let message = dataArray[0];
+            let sender = dataArray[1];
+
+            if (sender == "client") {
+                document.getElementById("chat").innerHTML +=
+                '<div class="card bg-dark text-light ms-auto p2 mb-3">' +
+                    '<div class="card-body">' +
+                        '<p class="card-text">' + message + '</p>' +
+                    '</div>' +
+                '</div>'
+            } else if (sender == "admin") {
+                document.getElementById("chat").innerHTML +=
+                '<div class="card bg-dark text-light ms-auto p2 mb-3">' +
+                    '<div class="card-body">' +
+                        '<p class="card-text">' + message + '</p>' +
+                    '</div>' +
+                '</div>'
+            }
+
+
+
+        }
+        const myForm = document.getElementById("myForm");
+        myForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        let myMessage = document.getElementById("Message").value + " client";
+        let data = JSON.stringify(myMessage);
+        document.getElementById("Message").value = ""
+        ws.send(data);
+        });

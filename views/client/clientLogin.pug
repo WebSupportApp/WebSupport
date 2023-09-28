@@ -1,0 +1,15 @@
+extends layoutLoggedOut
+
+block main-content
+    form#request-form.form-control(action='/client/login' method='post')
+        div.mb-3.col-lg-3.col-md-4.col-sm-6
+            label.form-label(for='email') Email id
+            input.form-control(type="email" name="email" required)
+        div.mb-3.col-lg-3.col-md-4.col-sm-6
+            label.form-label(for='password') Password
+            input.form-control(type="password" name="password" required)
+        div.mb-3.col-lg-3.col-md-4.col-sm-6
+            input.btn.btn-outline-dark.mb-3(type="submit" value="Login")
+            br
+            span Not registered yet?        
+            a.btn.btn-outline-dark(href="/client/register") Register

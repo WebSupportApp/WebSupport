@@ -13,6 +13,12 @@ router.route("/")
 router.route("/openTickets")
     .get(adminController.show_open_tickets);
 
+router.route("/chat")
+    .get((req, res) => {
+        res.render("admin/chat", { title: "Admin | Chat" });
+    })
+
+
 router.route("/ticket/:ticketID")
 
     .get(adminController.display_ticket)
