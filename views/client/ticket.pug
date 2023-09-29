@@ -1,0 +1,36 @@
+extends layoutLoggedIn
+
+block main-content
+    div#clientDetails
+        table.table.table-light.table-striped
+            tr 
+                th(colspan="2") Client details
+            tr 
+                td.w-25 Client ID
+                td #{ticket.client._id}
+            tr 
+                td.w-25 Email
+                td #{ticket.client.email}
+            tr 
+                td.w-25 Name
+                td #{ticket.client.firstName}  #{ticket.client.lastName}   
+    div#ticketDetails
+        table.table.table-light.table-striped
+            tr 
+                th(colspan="2") Ticket details
+            tr 
+                td.w-25 Ticket ID
+                td #{ticket._id}
+            tr 
+                td.w-25 Subject
+                td #{ticket.requestSubject}
+            tr 
+                td.w-25 Details
+                td #{ticket.requestDetails}
+            tr 
+                td.w-25 Created On
+                td #{ticket.createdOn}
+            tr 
+                td.w-25 Current Status
+                td #{ticket.status}
+

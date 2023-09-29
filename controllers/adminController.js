@@ -5,6 +5,7 @@ exports.show_open_tickets = (req, res) => {
     Ticket.find({ status: { $ne: "Resolved" } }, (err, foundOpenTickets) => {
         if (err) {
             res.status(500).render("error/500", { url: req.url, message: "Unable to display open tickets" });
+            console.log(err);
         } else {
             res.render("admin/listOfTickets", { tickets: foundOpenTickets, title: "Admin | Open Tickets" });
         }
@@ -19,7 +20,7 @@ exports.display_ticket = (req, res) => {
             res.render("admin/ticket", { ticket: foundTicket, title: "Admin | Ticket" });
         }
     });
-} 
+}
 
 exports.update_ticket = (req, res) => {
     Ticket.findOneAndUpdate({ _id: req.params.ticketID },
